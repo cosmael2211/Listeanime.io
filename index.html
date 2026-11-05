@@ -1,0 +1,1313 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mael Rabah — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ═══ NAV ═══ -->
+<header>
+    <nav id="navbar">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero">Présentation</a></li>
+            <li class="nav-dropdown">
+                <a href="projets.html">Domaines <span class="nav-arrow">▾</span></a>
+                <ul class="nav-sub">
+                    <li><a href="projets.html?cat=strat">Stratégie de communication</a></li>
+                    <li><a href="projets.html?cat=crea">Création numérique</a></li>
+                    <li><a href="projets.html?cat=dev">Développement numérique</a></li>
+                </ul>
+            </li>
+            <li><a href="#projets-slider">Projets</a></li>
+            <li><a href="influence.html">Influence</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-logo">MR<span class="dot">.</span></div>
+    </nav>
+</header>
+
+<main>
+
+    <!-- ═══ HERO ═══ -->
+    <section id="hero">
+        <div class="hero-bg-word">PORTFOLIO</div>
+        <div class="hero-grid-bg"></div>
+        <div class="hero-vignette"></div>
+        <div class="hero-inner">
+            <div class="hero-left">
+                <span class="hero-label">MMI · BUT · 2025</span>
+                <h1 class="hero-title">
+                    <span class="hero-line"><em>Mael</em></span>
+                    <span class="hero-line">Rabah<span class="dot-g">.</span></span>
+                </h1>
+                <p class="hero-desc">
+                    Bonjour, je m'appelle Mael Rabah et je prépare actuellement un BAC+3 en BUT MMI (Métiers du Multimédia et de l'Internet). Je suis curieux, créatif et motivé. Au cours de ma formation, j'ai développé de nombreuses compétences telles que la création d'affiches et de mockups, l'analyse marketing et communicationnelle d'un projet, ainsi que le développement web de sites. Je suis aujourd'hui à la recherche d'opportunités où je pourrai mettre ces compétences au service d'une équipe et continuer à monter en compétence.
+                </p>
+                <div class="hero-actions">
+                    <a href="./cv.pdf" download class="btn-outline">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>Télécharger CV</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-photo-frame">
+                    <img src="./mael.jpg" alt="Mael Rabah" class="hero-photo">
+                    <div class="hero-photo-border"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SLIDER 1 — Projets professionnels → projet-X.html ═══ -->
+    <section id="projets-slider" style="padding:5rem 0;overflow:hidden;position:relative;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+        <div class="slider-header rv" style="width:88%;max-width:1240px;margin:0 auto 2.5rem;">
+            <span class="sec-num">01</span>
+            <h2 style="font-family:var(--font-h);font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:600;color:var(--text);">
+                Mes projets <em style="font-style:italic;color:var(--gold);">professionnels</em>
+            </h2>
+        </div>
+        <div class="slider-track-wrap" style="position:relative;overflow:hidden;">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:100px;background:linear-gradient(90deg,var(--bg2),transparent);z-index:10;pointer-events:none;"></div>
+            <div style="position:absolute;right:0;top:0;bottom:0;width:100px;background:linear-gradient(-90deg,var(--bg2),transparent);z-index:10;pointer-events:none;"></div>
+            <div class="slider-track" id="sliderTrack">
+                
+                <a class="slide-card" href="projet-1.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./width_263.png"
+                             alt="Fruivia : Création de la marque et stratégie marketing"
+                             class="slide-img"
+                             >
+                        
+                        <div class="slide-overlay"><span>Voir le projet →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-strat">Stratégie de communication</span>
+                        </div>
+                        <div class="slide-title">Fruivia : Création de la marque et stratégie marketing</div>
+                        <div class="slide-desc">2025-2026 : Création d&#39;un projet et analyse communicationnelle de celui-ci</div>
+                        <div class="slide-comps">
+                            
+                            <span class="comp-badge">Comprendre</span>
+                            
+                            <span class="comp-badge">Concevoir</span>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-2.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-projet/logo-V_xtrem.svg"
+                             alt="V-Xtrem"
+                             class="slide-img"
+                             style="object-fit:contain;padding:2rem;background:var(--bg4);">
+                        
+                        <div class="slide-overlay"><span>Voir le projet →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-crea">Création numérique</span>
+                        </div>
+                        <div class="slide-title">V-Xtrem</div>
+                        <div class="slide-desc">2024-2025 : Création de design d&#39;une canette</div>
+                        <div class="slide-comps">
+                            
+                            <span class="comp-badge">Concevoir</span>
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-3.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-projet/allumettes.webp"
+                             alt="Code Java : Le Jeu des Allumettes"
+                             class="slide-img"
+                             >
+                        
+                        <div class="slide-overlay"><span>Voir le projet →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-dev">Développement numérique</span>
+                        </div>
+                        <div class="slide-title">Code Java : Le Jeu des Allumettes</div>
+                        <div class="slide-desc">2024-2025 : Création d&#39;un jeu des allumettes en Java</div>
+                        <div class="slide-comps">
+                            
+                            <span class="comp-badge">Développer</span>
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-4.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-projet/logo-smartprotect.webp"
+                             alt="SmartProtect : Charte graphique"
+                             class="slide-img"
+                             style="object-fit:contain;padding:2rem;background:var(--bg4);">
+                        
+                        <div class="slide-overlay"><span>Voir le projet →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-strat">Stratégie de communication</span>
+                        </div>
+                        <div class="slide-title">SmartProtect : Charte graphique</div>
+                        <div class="slide-desc">2024-2025 : Création d&#39;une marque en rapport à une cause écologique</div>
+                        <div class="slide-comps">
+                            
+                            <span class="comp-badge">Comprendre</span>
+                            
+                            <span class="comp-badge">Concevoir</span>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-5.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-projet/logo-trails.svg"
+                             alt="Trails de la Croix"
+                             class="slide-img"
+                             style="object-fit:contain;padding:2rem;background:var(--bg4);">
+                        
+                        <div class="slide-overlay"><span>Voir le projet →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-crea">Création numérique</span>
+                        </div>
+                        <div class="slide-title">Trails de la Croix</div>
+                        <div class="slide-desc">2025-2026 : Création d&#39;une affiche afin de promouvoirr un évènement </div>
+                        <div class="slide-comps">
+                            
+                            <span class="comp-badge">Concevoir</span>
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a class="slide-card" href="projet-1.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./width_263.png" alt="" class="slide-img"
+                             >
+                        
+                        <div class="slide-overlay"><span>Voir le projet →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-strat">Stratégie de communication</span>
+                        </div>
+                        <div class="slide-title">Fruivia : Création de la marque et stratégie marketing</div>
+                        <div class="slide-desc">2025-2026 : Création d&#39;un projet et analyse communicationnelle de celui-ci</div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-2.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-projet/logo-V_xtrem.svg" alt="" class="slide-img"
+                             style="object-fit:contain;padding:2rem;background:var(--bg4);">
+                        
+                        <div class="slide-overlay"><span>Voir le projet →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-crea">Création numérique</span>
+                        </div>
+                        <div class="slide-title">V-Xtrem</div>
+                        <div class="slide-desc">2024-2025 : Création de design d&#39;une canette</div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-3.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-projet/allumettes.webp" alt="" class="slide-img"
+                             >
+                        
+                        <div class="slide-overlay"><span>Voir le projet →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-dev">Développement numérique</span>
+                        </div>
+                        <div class="slide-title">Code Java : Le Jeu des Allumettes</div>
+                        <div class="slide-desc">2024-2025 : Création d&#39;un jeu des allumettes en Java</div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-4.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-projet/logo-smartprotect.webp" alt="" class="slide-img"
+                             style="object-fit:contain;padding:2rem;background:var(--bg4);">
+                        
+                        <div class="slide-overlay"><span>Voir le projet →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-strat">Stratégie de communication</span>
+                        </div>
+                        <div class="slide-title">SmartProtect : Charte graphique</div>
+                        <div class="slide-desc">2024-2025 : Création d&#39;une marque en rapport à une cause écologique</div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-5.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-projet/logo-trails.svg" alt="" class="slide-img"
+                             style="object-fit:contain;padding:2rem;background:var(--bg4);">
+                        
+                        <div class="slide-overlay"><span>Voir le projet →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-crea">Création numérique</span>
+                        </div>
+                        <div class="slide-title">Trails de la Croix</div>
+                        <div class="slide-desc">2025-2026 : Création d&#39;une affiche afin de promouvoirr un évènement </div>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SLIDER 2 — Projets personnels → influence-X.html ═══ -->
+    <section id="projets-slider-2" style="padding:5rem 0;overflow:hidden;position:relative;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+        <div class="slider-header rv" style="width:88%;max-width:1240px;margin:0 auto 2.5rem;">
+            <span class="sec-num">02</span>
+            <h2 style="font-family:var(--font-h);font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:600;color:var(--text);">
+                Mes projets <em style="font-style:italic;color:var(--gold);">personnels</em>
+            </h2>
+        </div>
+        <div class="slider-track-wrap" style="position:relative;overflow:hidden;">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:100px;background:linear-gradient(90deg,var(--bg2),transparent);z-index:10;pointer-events:none;"></div>
+            <div style="position:absolute;right:0;top:0;bottom:0;width:100px;background:linear-gradient(-90deg,var(--bg2),transparent);z-index:10;pointer-events:none;"></div>
+            <div class="slider-track slider-track-2" id="sliderTrack2">
+                
+                <a class="slide-card" href="projet-perso-1.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-dessin/illustration-genshin_Impact.jpg"
+                             alt="Collection de dessin personnel"
+                             class="slide-img">
+                        
+                        <div class="slide-overlay"><span>Voir →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            
+                            <span class="slide-domain dom-crea">Illustration</span>
+                            
+                        </div>
+                        <div class="slide-title">Collection de dessin personnel</div>
+                        <div class="slide-desc">Création et réflexion d&#39;un ensemble de dessins stylisés manga</div>
+                        <div class="slide-comps">
+                            <span class="comp-badge">Illustration</span><span class="comp-badge">Design</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-perso-2.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-projet/utm-affiche.png"
+                             alt="Création d&#39;un web novel"
+                             class="slide-img">
+                        
+                        <div class="slide-overlay"><span>Voir →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            
+                            <span class="slide-domain dom-crea">Narration</span>
+                            
+                        </div>
+                        <div class="slide-title">Création d&#39;un web novel</div>
+                        <div class="slide-desc">Création d&#39;un roman publié en ligne</div>
+                        <div class="slide-comps">
+                            <span class="comp-badge">Narration</span><span class="comp-badge">Création</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-perso-3.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./nightcore-utm.jpg"
+                             alt="Nightcore Ultimate"
+                             class="slide-img">
+                        
+                        <div class="slide-overlay"><span>Voir →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            
+                            <span class="slide-domain dom-crea">Création</span>
+                            
+                        </div>
+                        <div class="slide-title">Nightcore Ultimate</div>
+                        <div class="slide-desc">Chaîne YouTube de création de musique en nightcore (musique avec une hauteur de son légèrement élevée et plus rapide)</div>
+                        <div class="slide-comps">
+                            <span class="comp-badge">Création</span><span class="comp-badge">Montage</span>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a class="slide-card" href="projet-perso-1.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-dessin/illustration-genshin_Impact.jpg" alt="" class="slide-img">
+                        
+                        <div class="slide-overlay"><span>Voir →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-crea">Illustration</span>
+                        </div>
+                        <div class="slide-title">Collection de dessin personnel</div>
+                        <div class="slide-desc">Création et réflexion d&#39;un ensemble de dessins stylisés manga</div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-perso-2.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./image-projet/utm-affiche.png" alt="" class="slide-img">
+                        
+                        <div class="slide-overlay"><span>Voir →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-crea">Narration</span>
+                        </div>
+                        <div class="slide-title">Création d&#39;un web novel</div>
+                        <div class="slide-desc">Création d&#39;un roman publié en ligne</div>
+                    </div>
+                </a>
+                
+                <a class="slide-card" href="projet-perso-3.html">
+                    <div class="slide-img-wrap">
+                        
+                        <img src="./nightcore-utm.jpg" alt="" class="slide-img">
+                        
+                        <div class="slide-overlay"><span>Voir →</span></div>
+                    </div>
+                    <div class="slide-body">
+                        <div class="slide-meta">
+                            <span class="slide-domain dom-crea">Création</span>
+                        </div>
+                        <div class="slide-title">Nightcore Ultimate</div>
+                        <div class="slide-desc">Chaîne YouTube de création de musique en nightcore (musique avec une hauteur de son légèrement élevée et plus rapide)</div>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ 3 DOMAINES ═══ -->
+    <section id="domaines">
+        <div class="container">
+            <div class="sec-head rv">
+                <h2>Mes <em>domaines</em></h2>
+                <div class="gold-rule"></div>
+            </div>
+            <div class="domaines-grid">
+
+                <a href="projets.html?cat=strat" class="domaine-card rv" style="transition-delay:0ms">
+                    <div class="domaine-num">01</div>
+                    <div class="domaine-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div class="domaine-label">Domaine 01</div>
+                    <div class="domaine-title">Stratégie de communication</div>
+                    <div class="domaine-desc">Réalisation de la construction de projets afin de définir les différents objectifs marketing et communicationnels.</div>
+                    <div class="domaine-comps">
+                        
+                    </div>
+                    <div class="domaine-link">
+                        <span>Voir les projets</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </a>
+
+                <a href="projets.html?cat=crea" class="domaine-card rv" style="transition-delay:100ms">
+                    <div class="domaine-num">02</div>
+                    <div class="domaine-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="domaine-label">Domaine 02</div>
+                    <div class="domaine-title">Création numérique</div>
+                    <div class="domaine-desc">Conception d'identités visuelles tels que des flyers, affiches, visuels web, ainsi que les compétences pour fournir un montage son et vidéo dynamique.</div>
+                    <div class="domaine-comps">
+                      
+                    </div>
+                    <div class="domaine-link">
+                        <span>Voir les projets</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </a>
+
+                <a href="projets.html?cat=dev" class="domaine-card rv" style="transition-delay:200ms">
+                    <div class="domaine-num">03</div>
+                    <div class="domaine-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <div class="domaine-label">Domaine 03</div>
+                    <div class="domaine-title">Développement numérique</div>
+                    <div class="domaine-desc">Pratique de plusieurs langages de programmation tels que HTML, CSS, PHP ainsi que les programmes orientés objet comme Java.</div>
+                    <div class="domaine-comps">
+                  
+                    </div>
+                    <div class="domaine-link">
+                        <span>Voir les projets</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PROJETS PERSO — Fan Carousel ═══ -->
+    <section id="projets-perso">
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-border),transparent);"></div>
+        <div class="perso-bg-word">PERSO</div>
+
+        <div class="container" style="position:relative;z-index:2;">
+            <div class="sec-head rv">
+                <h2>Mon Cahier<em> d'inspiration</em></h2>
+                <div class="gold-rule"></div>
+            
+            </div>
+
+            <div class="fan-carousel-wrap rv">
+                <div class="fan-carousel" id="fanCarousel">
+                    
+                    <a href="influence-1.html"
+                       class="fan-card"
+                       data-index="0">
+                        <div class="fan-card-inner">
+                            <div class="fan-img-wrap">
+                                
+                                <img src="./images/persona5.webp" alt="Influence jeux-vidéo : Persona 5" class="fan-img">
+                                
+                                <div class="fan-img-overlay"><span class="fan-cta">Voir →</span></div>
+                            </div>
+                            <div class="fan-card-body">
+                                <div class="fan-card-num">01</div>
+                                <div class="fan-card-title">Influence jeux-vidéo : Persona 5</div>
+                                <div class="fan-card-desc"></div>
+                                <div class="fan-tags">
+                                    
+                                    <span class="fan-tag">Illustration</span>
+                                    
+                                    <span class="fan-tag">Design</span>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="influence-2.html"
+                       class="fan-card"
+                       data-index="1">
+                        <div class="fan-card-inner">
+                            <div class="fan-img-wrap">
+                                
+                                <img src="./images/minecraft.webp" alt="Influence jeux-vidéo : Minecraft" class="fan-img">
+                                
+                                <div class="fan-img-overlay"><span class="fan-cta">Voir →</span></div>
+                            </div>
+                            <div class="fan-card-body">
+                                <div class="fan-card-num">02</div>
+                                <div class="fan-card-title">Influence jeux-vidéo : Minecraft</div>
+                                <div class="fan-card-desc"></div>
+                                <div class="fan-tags">
+                                    
+                                    <span class="fan-tag">Code</span>
+                                    
+                                    <span class="fan-tag">PHP</span>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="influence-3.html"
+                       class="fan-card"
+                       data-index="2">
+                        <div class="fan-card-inner">
+                            <div class="fan-img-wrap">
+                                
+                                <img src="./images/star-wars.webp" alt="Influence film : Star Wars" class="fan-img">
+                                
+                                <div class="fan-img-overlay"><span class="fan-cta">Voir →</span></div>
+                            </div>
+                            <div class="fan-card-body">
+                                <div class="fan-card-num">03</div>
+                                <div class="fan-card-title">Influence film : Star Wars</div>
+                                <div class="fan-card-desc"></div>
+                                <div class="fan-tags">
+                                    
+                                    <span class="fan-tag">Motion</span>
+                                    
+                                    <span class="fan-tag">SVG</span>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="influence-4.html"
+                       class="fan-card"
+                       data-index="3">
+                        <div class="fan-card-inner">
+                            <div class="fan-img-wrap">
+                                
+                                <img src="./images/jdg.webp" alt="Influence Youtuber : Bazar du grenier" class="fan-img">
+                                
+                                <div class="fan-img-overlay"><span class="fan-cta">Voir →</span></div>
+                            </div>
+                            <div class="fan-card-body">
+                                <div class="fan-card-num">04</div>
+                                <div class="fan-card-title">Influence Youtuber : Bazar du grenier</div>
+                                <div class="fan-card-desc"></div>
+                                <div class="fan-tags">
+                                    
+                                    <span class="fan-tag">Motion</span>
+                                    
+                                    <span class="fan-tag">SVG</span>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="influence-5.html"
+                       class="fan-card"
+                       data-index="4">
+                        <div class="fan-card-inner">
+                            <div class="fan-img-wrap">
+                                
+                                <img src="./images/ddlc.webp" alt="Influence jeux vidéos : Doki doki littérature Club" class="fan-img">
+                                
+                                <div class="fan-img-overlay"><span class="fan-cta">Voir →</span></div>
+                            </div>
+                            <div class="fan-card-body">
+                                <div class="fan-card-num">05</div>
+                                <div class="fan-card-title">Influence jeux vidéos : Doki doki littérature Club</div>
+                                <div class="fan-card-desc"></div>
+                                <div class="fan-tags">
+                                    
+                                    <span class="fan-tag">Motion</span>
+                                    
+                                    <span class="fan-tag">SVG</span>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+
+                <div class="fan-controls">
+                    <button class="fan-btn" id="fanPrev" aria-label="Précédent">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <div class="fan-dots" id="fanDots">
+                        
+                        <button class="fan-dot active" data-index="0"></button>
+                        
+                        <button class="fan-dot " data-index="1"></button>
+                        
+                        <button class="fan-dot " data-index="2"></button>
+                        
+                        <button class="fan-dot " data-index="3"></button>
+                        
+                        <button class="fan-dot " data-index="4"></button>
+                        
+                    </div>
+                    <button class="fan-btn" id="fanNext" aria-label="Suivant">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:3rem;" class="rv">
+                <a href="influence.html" class="btn-outline">
+                    Voir toutes mes influences
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Previews — Studio + Slider Perso</title>
+<style>
+/* ── Variables (reprises du portfolio) ── */
+:root {
+  --gold: #b8975a;
+  --gold-light: #d4b47a;
+  --gold-pale: rgba(184,151,90,0.12);
+  --gold-border: rgba(184,151,90,0.2);
+  --bg: #060608;
+  --bg2: #0c0c10;
+  --bg3: #111116;
+  --bg4: #16161c;
+  --text: #ede8e0;
+  --text2: #8c8880;
+  --text3: #c0bab0;
+  --border: rgba(255,255,255,0.06);
+  --r: 6px;
+  --r2: 14px;
+  --font-h: 'Cormorant Garamond', Georgia, serif;
+  --font-ui: 'Space Grotesk', sans-serif;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: var(--font-ui); background: var(--bg); color: var(--text); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ② SECTION STUDIO — Bloc central + 4 épisodes orbitaux en DORÉ
+     Coller dans index.html à la place de #studio
+════════════════════════════════════════════════════════════════ -->
+<section id="studio">
+  <div class="studio-inner">
+
+    <!-- En-tête -->
+    <div class="studio-head rv">
+      <div class="stu-head-text">
+        <div class="stu-eyebrow">Web Radio</div>
+        <h2 class="stu-title">Le <em>Studio</em></h2>
+        <p class="stu-sub">Émissions produites, animées et montées dans le cadre du BUT MMI.</p>
+        
+      </div>
+    </div>
+
+    <!-- Zone orbitale : logo central + 4 épisodes qui l'entourent -->
+    <div class="studio-orbital-wrap rv">
+
+      <!-- Logo central -->
+      <div class="studio-core">
+        <div class="studio-core-ring studio-core-ring--1"></div>
+        <div class="studio-core-ring studio-core-ring--2"></div>
+        <div class="studio-core-ring studio-core-ring--3"></div>
+        <div class="studio-core-logo">
+          <span class="studio-core-initials">MR<span class="studio-core-dot">.</span></span>
+          <span class="studio-core-label">Studio</span>
+        </div>
+        <!-- Orbites décoratives animées -->
+        <div class="studio-orbit studio-orbit--1">
+          <div class="studio-orbit-dot"></div>
+        </div>
+        <div class="studio-orbit studio-orbit--2">
+          <div class="studio-orbit-dot"></div>
+        </div>
+      </div>
+
+      <!-- 4 épisodes positionnés autour -->
+      <a href="studio-episode-1.html" class="studio-ep studio-ep--tl">
+        <div class="studio-ep-num">01</div>
+        <div class="studio-ep-role">Assistant réalisateur</div>
+        <div class="studio-ep-title">La Cérémonie des walids</div>
+        <div class="studio-ep-desc">Emmission qui récompense les meilleurs projets des étudants du BUT</div>
+        <div class="studio-ep-foot">
+          <span class="studio-ep-year">27/01/2026</span>
+        </div>
+        <div class="studio-ep-cta">Écouter →</div>
+        <!-- Connecteur vers le centre -->
+        <div class="studio-ep-connector studio-ep-connector--tr"></div>
+      </a>
+
+      <a href="studio-episode-2.html" class="studio-ep studio-ep--tr">
+        <div class="studio-ep-num">02</div>
+        <div class="studio-ep-role">Animateur</div>
+        <div class="studio-ep-title">Emmisions Halloween</div>
+        <div class="studio-ep-desc">Emmisions pirtnat sur le thème de l'horreur pour vous effrayer</div>
+        <div class="studio-ep-foot">
+          <div class="studio-ep-tags"><span class="studio-ep-tag">Interview</span><span class="studio-ep-tag">Digital</span></div>
+          <span class="studio-ep-year">15/10/2025</span>
+        </div>
+        <div class="studio-ep-cta">Écouter →</div>
+        <div class="studio-ep-connector studio-ep-connector--tl"></div>
+      </a>
+
+      <a href="studio-episode-3.html" class="studio-ep studio-ep--bl">
+        <div class="studio-ep-num">03</div>
+        <div class="studio-ep-role">Animateur</div>
+        <div class="studio-ep-title">Emmissions Mario Party</div>
+        <div class="studio-ep-desc">Emmissions durant laquelle des joueurs s'affronte pour gagner au jeu </div>
+        <div class="studio-ep-foot">
+          <div class="studio-ep-tags"><span class="studio-ep-tag">Chronique</span><span class="studio-ep-tag">Actu</span></div>
+          <span class="studio-ep-year">25/03/2026</span>
+        </div>
+        <div class="studio-ep-cta">Écouter →</div>
+        <div class="studio-ep-connector studio-ep-connector--br"></div>
+      </a>
+
+      <a href="studio-episode-4.html" class="studio-ep studio-ep--br">
+        <div class="studio-ep-num">04</div>
+        <div class="studio-ep-role">Animateur</div>
+        <div class="studio-ep-title">Emmissions Loup Garou</div>
+        <div class="studio-ep-desc">Emmission durant laquelle des joueurs s'affronte dans ce célèbre jeu de société.</div>
+        <div class="studio-ep-foot">
+          <div class="studio-ep-tags"><span class="studio-ep-tag">Bilan</span><span class="studio-ep-tag">Saison</span></div>
+          <span class="studio-ep-year">26/05/2026</span>
+        </div>
+        <div class="studio-ep-cta">Écouter →</div>
+        <div class="studio-ep-connector studio-ep-connector--bl"></div>
+      </a>
+
+      <!-- Lignes SVG de connexion -->
+      <svg class="studio-lines" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <!-- tl → centre -->
+        <line x1="220" y1="200" x2="450" y2="300" stroke="rgba(184,151,90,0.25)" stroke-width="1" stroke-dasharray="4 6"/>
+        <!-- tr → centre -->
+        <line x1="680" y1="200" x2="450" y2="300" stroke="rgba(184,151,90,0.25)" stroke-width="1" stroke-dasharray="4 6"/>
+        <!-- bl → centre -->
+        <line x1="220" y1="400" x2="450" y2="300" stroke="rgba(184,151,90,0.25)" stroke-width="1" stroke-dasharray="4 6"/>
+        <!-- br → centre -->
+        <line x1="680" y1="400" x2="450" y2="300" stroke="rgba(184,151,90,0.25)" stroke-width="1" stroke-dasharray="4 6"/>
+        <!-- Points aux carrefours -->
+        <circle cx="220" cy="200" r="3" fill="rgba(184,151,90,0.4)"/>
+        <circle cx="680" cy="200" r="3" fill="rgba(184,151,90,0.4)"/>
+        <circle cx="220" cy="400" r="3" fill="rgba(184,151,90,0.4)"/>
+        <circle cx="680" cy="400" r="3" fill="rgba(184,151,90,0.4)"/>
+        <circle cx="450" cy="300" r="5" fill="rgba(184,151,90,0.5)"/>
+      </svg>
+    </div><!-- /.studio-orbital-wrap -->
+  </div><!-- /.studio-inner -->
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ③ CSS — À AJOUTER dans style.css (fin du fichier)
+════════════════════════════════════════════════════════════════ -->
+<style id="new-styles-to-copy">
+
+/* ════════════════════════════
+   SLIDER PERSO — perso-slide-card
+════════════════════════════ */
+@keyframes infiniteSlidePerso {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+#sliderPersoTrack:hover { animation-play-state: paused; }
+
+.perso-slide-card {
+  flex-shrink: 0;
+  width: 340px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  overflow: hidden;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.4s, transform 0.4s;
+  cursor: pointer;
+}
+.perso-slide-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease);
+}
+.perso-slide-card:hover { border-color: var(--gold-border); transform: translateY(-6px); }
+.perso-slide-card:hover::before { transform: scaleX(1); }
+
+.psc-img-wrap {
+  height: 210px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg4);
+}
+.psc-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: grayscale(25%);
+  display: block;
+  transition: filter 0.5s, transform 0.6s;
+}
+.perso-slide-card:hover .psc-img { filter: grayscale(0%); transform: scale(1.05); }
+
+.psc-img-placeholder { display: flex; align-items: center; justify-content: center; }
+.psc-placeholder-inner { position: absolute; }
+
+.psc-overlay {
+  position: absolute; inset: 0;
+  background: rgba(6,6,8,0.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.perso-slide-card:hover .psc-overlay { opacity: 1; }
+.psc-overlay span {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+  color: var(--gold); border: 1px solid var(--gold);
+  padding: 0.55rem 1.1rem; border-radius: var(--r);
+}
+
+.psc-body { padding: 1.4rem; }
+.psc-meta { margin-bottom: 0.7rem; }
+.psc-cat {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 0.22rem 0.6rem;
+  border-radius: 3px;
+  background: rgba(184,151,90,0.14); color: var(--gold);
+}
+.psc-title {
+  font-family: var(--font-h); font-size: 1.25rem; font-weight: 600;
+  color: var(--text); margin-bottom: 0.45rem; line-height: 1.2;
+}
+.psc-desc { font-size: 0.83rem; color: var(--text2); line-height: 1.6; margin-bottom: 0.9rem; }
+.psc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.psc-tag {
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold);
+  background: rgba(184,151,90,0.08); border: 1px solid rgba(184,151,90,0.18);
+  padding: 0.2rem 0.55rem; border-radius: 3px;
+}
+
+
+/* ════════════════════════════
+   SECTION STUDIO — Style Orbital Doré
+════════════════════════════ */
+#studio {
+  padding: 9rem 0;
+  background: var(--bg2);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Halo doré d'ambiance */
+#studio::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px; height: 900px;
+  background: radial-gradient(circle, rgba(184,151,90,0.035) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.studio-inner {
+  width: 88%; max-width: 1200px;
+  margin: 0 auto; position: relative; z-index: 2;
+}
+
+/* ── Header ── */
+.studio-head { margin-bottom: 5rem; text-align: center; }
+.stu-eyebrow {
+  font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--gold); font-weight: 600; margin-bottom: 0.9rem;
+  display: block;
+}
+.stu-title {
+  font-family: var(--font-h); font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-weight: 600; color: var(--text); line-height: 1;
+}
+.stu-title em { font-style: italic; color: var(--gold); }
+.stu-sub {
+  font-size: 0.88rem; color: var(--text2);
+  line-height: 1.65; margin-top: 1rem;
+  max-width: 420px; margin-left: auto; margin-right: auto;
+}
+
+/* ── Zone orbitale ── */
+.studio-orbital-wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  justify-items: center;
+  min-height: 560px;
+}
+
+/* SVG lignes de connexion — positionné en absolu par-dessus */
+.studio-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Core / Logo central ── */
+.studio-core {
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+  width: 160px; height: 160px;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+}
+
+/* Anneaux concentriques */
+.studio-core-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(184,151,90,0.15);
+}
+.studio-core-ring--1 { width: 160px; height: 160px; }
+.studio-core-ring--2 { width: 220px; height: 220px; border-color: rgba(184,151,90,0.08); }
+.studio-core-ring--3 { width: 290px; height: 290px; border-color: rgba(184,151,90,0.04); }
+
+/* Orbites animées */
+.studio-orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(184,151,90,0.12);
+  animation: orbitSpin linear infinite;
+}
+.studio-orbit--1 { width: 340px; height: 340px; animation-duration: 20s; }
+.studio-orbit--2 { width: 420px; height: 420px; animation-duration: 30s; animation-direction: reverse; }
+
+.studio-orbit-dot {
+  position: absolute;
+  top: -4px; left: 50%;
+  transform: translateX(-50%);
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(184,151,90,0.6);
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Logo */
+.studio-core-logo {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0f0f14, #16161c);
+  border: 1px solid rgba(184,151,90,0.4);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 3px;
+  box-shadow:
+    0 0 0 1px rgba(184,151,90,0.1),
+    0 0 40px rgba(184,151,90,0.08),
+    inset 0 1px 0 rgba(184,151,90,0.1);
+  position: relative; z-index: 2;
+  transition: box-shadow 0.4s;
+}
+.studio-core-logo:hover {
+  box-shadow:
+    0 0 0 1px rgba(184,151,90,0.25),
+    0 0 60px rgba(184,151,90,0.15),
+    inset 0 1px 0 rgba(184,151,90,0.15);
+}
+.studio-core-initials {
+  font-family: var(--font-h); font-size: 2rem; font-weight: 700;
+  color: var(--text); line-height: 1;
+}
+.studio-core-dot { color: var(--gold); }
+.studio-core-label {
+  font-size: 0.5rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); font-weight: 600;
+}
+
+/* ── Cartes épisodes ── */
+.studio-ep {
+  position: relative;
+  z-index: 2;
+  width: 100%; max-width: 280px;
+  padding: 1.75rem;
+  background: var(--bg3);
+  border: 1px solid rgba(184,151,90,0.15);
+  border-radius: var(--r2);
+  text-decoration: none; color: inherit;
+  display: block;
+  transition: border-color 0.35s, transform 0.35s, box-shadow 0.35s;
+  overflow: hidden;
+}
+.studio-ep::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), rgba(184,151,90,0.3), transparent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.45s var(--ease);
+}
+.studio-ep:hover {
+  border-color: rgba(184,151,90,0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(184,151,90,0.2), 0 0 30px rgba(184,151,90,0.05);
+}
+.studio-ep:hover::before { transform: scaleX(1); }
+
+/* Shimmer au hover */
+.studio-ep::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -75%;
+  width: 50%; height: 200%;
+  background: linear-gradient(105deg, transparent 40%, rgba(184,151,90,0.06) 50%, transparent 60%);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+.studio-ep:hover::after { left: 130%; }
+
+/* Placement dans la grille */
+.studio-ep--tl { grid-column: 1; grid-row: 1; }
+.studio-ep--tr { grid-column: 3; grid-row: 1; }
+.studio-ep--bl { grid-column: 1; grid-row: 3; }
+.studio-ep--br { grid-column: 3; grid-row: 3; }
+
+.studio-ep-num {
+  font-family: var(--font-h); font-size: 2.5rem; font-weight: 700;
+  color: rgba(184,151,90,0.07); line-height: 1;
+  position: absolute; top: 0.75rem; right: 1rem;
+  transition: color 0.3s;
+}
+.studio-ep:hover .studio-ep-num { color: rgba(184,151,90,0.12); }
+
+.studio-ep-role {
+  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.6rem; display: block;
+}
+.studio-ep-title {
+  font-family: var(--font-h); font-size: 1.15rem; font-weight: 600;
+  color: var(--text); line-height: 1.2; margin-bottom: 0.65rem;
+}
+.studio-ep-desc {
+  font-size: 0.8rem; color: var(--text2); line-height: 1.65;
+  margin-bottom: 1.1rem;
+}
+.studio-ep-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.5rem;
+}
+.studio-ep-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.studio-ep-tag {
+  font-size: 0.56rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold);
+  background: rgba(184,151,90,0.08); border: 1px solid rgba(184,151,90,0.18);
+  padding: 0.18rem 0.5rem; border-radius: 3px;
+}
+.studio-ep-year {
+  font-size: 0.6rem; color: var(--text2); letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+.studio-ep-cta {
+  display: inline-block; margin-top: 1rem;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  opacity: 0; transform: translateX(-6px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.studio-ep:hover .studio-ep-cta { opacity: 1; transform: translateX(0); }
+
+/* ── Barre de statut ── */
+.studio-statusbar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 4rem; padding: 1rem 1.5rem;
+  background: rgba(184,151,90,0.03);
+  border: 1px solid rgba(184,151,90,0.1);
+  border-radius: var(--r);
+  flex-wrap: wrap; gap: 1rem;
+}
+.studio-status-left {
+  display: flex; align-items: center; gap: 0.7rem;
+  font-size: 0.65rem; color: rgba(184,151,90,0.6);
+  letter-spacing: 0.08em;
+}
+.studio-pulse-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--gold);
+  animation: goldPulse 2s ease-in-out infinite;
+}
+@keyframes goldPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(184,151,90,0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 7px rgba(184,151,90,0); }
+}
+.studio-status-right {
+  font-size: 0.62rem; color: var(--text2); letter-spacing: 0.1em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .studio-orbital-wrap {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.5rem;
+  }
+  .studio-core { grid-column: 1 / -1; grid-row: 2; }
+  .studio-ep--tl { grid-column: 1; grid-row: 1; }
+  .studio-ep--tr { grid-column: 2; grid-row: 1; }
+  .studio-ep--bl { grid-column: 1; grid-row: 3; }
+  .studio-ep--br { grid-column: 2; grid-row: 3; }
+  .studio-lines { display: none; }
+  .studio-orbit, .studio-core-ring--2, .studio-core-ring--3 { display: none; }
+}
+@media (max-width: 640px) {
+  .studio-orbital-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .studio-core { grid-column: 1; grid-row: 3; }
+  .studio-ep--tl { grid-column: 1; grid-row: 1; }
+  .studio-ep--tr { grid-column: 1; grid-row: 2; }
+  .studio-ep--bl { grid-column: 1; grid-row: 4; }
+  .studio-ep--br { grid-column: 1; grid-row: 5; }
+  .studio-ep { max-width: 100%; }
+}
+
+/* ── Responsive slider perso ── */
+@media (max-width: 600px) {
+  .perso-slide-card { width: 280px; }
+  .psc-img-wrap { height: 175px; }
+}
+</style>
+
+<script>
+/* ── Pause au hover pour le slider perso ── */
+(function() {
+  var track = document.getElementById('sliderPersoTrack');
+  if (!track) return;
+  track.addEventListener('mouseenter', function() { track.style.animationPlayState = 'paused'; });
+  track.addEventListener('mouseleave', function() { track.style.animationPlayState = 'running'; });
+})();
+
+/* ── Bouton reveal Studio ── */
+(function() {
+  var btn  = document.getElementById('studioRevealBtn');
+  var grid = document.getElementById('studioEpisodesGrid');
+  if (!btn || !grid) return;
+  btn.addEventListener('click', function() {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    grid.classList.toggle('open', !open);
+    grid.setAttribute('aria-hidden', open ? 'true' : 'false');
+  });
+})();
+</script>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section id="contact">
+        <div class="container">
+            <div class="sec-head rv">
+                <span class="sec-num">05</span>
+                <h2>Me <em>contacter</em></h2>
+                <div class="gold-rule"></div>
+            </div>
+            <div class="contact-grid contact-grid--solo">
+                <div class="rv-l">
+                   
+                    <div class="contact-infos">
+                        <a href="mailto:cosmael2211@gmail.com" class="ci-row">
+                            <span class="ci-icon">✉</span>
+                            <div><span class="ci-lbl">Email</span><span class="ci-val">cosmael2211@gmail.com</span></div>
+                        </a>
+                        <a href="tel:+33619123032" class="ci-row">
+                            <span class="ci-icon">✆</span>
+                            <div><span class="ci-lbl">Téléphone</span><span class="ci-val">+33 6 19 12 30 32</span></div>
+                        </a>
+                        <div class="social-row">
+                            <a href="https://www.instagram.com/maelrabah" target="_blank" class="social-link">Instagram →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <span class="footer-logo">MR<span class="dot">.</span></span>
+        <span class="footer-copy">© 2025 — Portfolio Mael Rabah</span>
+        <span class="footer-tag">BUT MMI</span>
+    </div>
+</footer>
+
+<script src="./script.js"></script>
+<script src="./projets.js"></script>
+
+</body>
+</html>

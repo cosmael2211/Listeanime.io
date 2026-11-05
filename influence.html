@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influences — Mael Rabah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+  /* ── Badges catégories influences ── */
+  .perso-jv    { background:rgba(160,120,230,0.12); color:#b08cf0; }
+  .perso-film  { background:rgba(184,151,90,0.14);  color:var(--gold); }
+  .perso-yt    { background:rgba(220,60,60,0.12);   color:#f07070; }
+  .perso-autre { background:rgba(80,140,230,0.12);  color:#7ab0f0; }
+  /* ── Ajouter ici les nouvelles catégories ── */
+
+  /* ── Page hero ── */
+  .perso-page-hero {
+    min-height: 38vh;
+    display: flex; align-items: flex-end;
+    padding: 140px 0 4rem;
+    position: relative; overflow: hidden;
+    background: var(--bg2);
+  }
+  .perso-page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(184,151,90,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184,151,90,0.025) 1px, transparent 1px);
+    background-size: 90px 90px;
+    pointer-events: none;
+  }
+  .perso-page-hero::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-border), transparent);
+  }
+  .perso-page-hero-inner { width: 88%; max-width: 1240px; margin: 0 auto; }
+  .perso-breadcrumb {
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--text2); margin-bottom: 1rem;
+  }
+  .perso-breadcrumb a { color: var(--gold); transition: opacity 0.2s; }
+  .perso-breadcrumb a:hover { opacity: 0.7; }
+  .perso-breadcrumb span { margin: 0 0.5rem; color: var(--border); }
+  .perso-page-title {
+    font-family: var(--font-h);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 600; line-height: 1; color: var(--text);
+  }
+  .perso-page-title em { font-style: italic; color: var(--gold); }
+
+  /* ── Filtres ── */
+  .perso-filters {
+    width: 88%; max-width: 1240px; margin: 0 auto;
+    display: flex; gap: 0.75rem; padding: 3rem 0 2rem; flex-wrap: wrap;
+  }
+
+  /* ── Grille ── */
+  .perso-section { padding: 0 0 8rem; background: var(--bg); }
+  .perso-grid-wrap { width: 88%; max-width: 1240px; margin: 0 auto; }
+  .perso-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+
+  /* ── Carte ── */
+  .perso-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: var(--r2); overflow: hidden; position: relative;
+    display: block; text-decoration: none; color: inherit;
+    transition: border-color 0.4s, transform 0.4s, opacity 0.4s;
+    cursor: pointer;
+  }
+  .perso-card:hover { border-color: var(--gold-border); transform: translateY(-5px); }
+  .perso-card-top-bar {
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.5s var(--ease);
+  }
+  .perso-card:hover .perso-card-top-bar { transform: scaleX(1); }
+  .perso-card-img-wrap { height: 200px; overflow: hidden; position: relative; background: var(--bg4); }
+  .perso-card-img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(20%); display: block;
+    transition: filter 0.5s, transform 0.6s;
+  }
+  .perso-card-img-contain { object-fit: contain; padding: 1.5rem; }
+  .perso-card:hover .perso-card-img { filter: grayscale(0%); transform: scale(1.05); }
+  .perso-card-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .perso-card-overlay {
+    position: absolute; inset: 0;
+    background: rgba(6,6,8,0.55);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .perso-card:hover .perso-card-overlay { opacity: 1; }
+  .perso-card-overlay span {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+    color: var(--gold); border: 1px solid var(--gold);
+    padding: 0.55rem 1.1rem; border-radius: var(--r);
+  }
+  .perso-card-body { padding: 1.5rem; }
+  .perso-cat-badge {
+    display: inline-block; font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.22rem 0.6rem; border-radius: 3px; margin-bottom: 0.9rem;
+  }
+  .perso-card-title {
+    font-family: var(--font-h); font-size: 1.3rem; font-weight: 600;
+    color: var(--text); margin-bottom: 0.5rem; line-height: 1.2;
+  }
+  .perso-card-desc { font-size: 0.83rem; color: var(--text2); line-height: 1.6; margin-bottom: 1.1rem; }
+  .perso-card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .perso-card-cta {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    opacity: 0; transform: translateY(4px);
+    transition: opacity 0.3s, transform 0.3s;
+    margin-top: 0.75rem;
+  }
+  .perso-card-cta svg { width: 13px; }
+  .perso-card:hover .perso-card-cta { opacity: 1; transform: translateY(0); }
+
+  /* ── VUE DÉTAIL ── */
+  .perso-detail { background: var(--bg); min-height: 100vh; }
+  .perso-detail-hero {
+    position: relative; height: 55vh; min-height: 380px;
+    overflow: hidden; background: var(--bg2);
+  }
+  .perso-detail-hero-img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(15%) brightness(0.6); transform: scale(1.03); display: block;
+  }
+  .perso-detail-hero-img.contain-img {
+    object-fit: contain; padding: 4rem; background: var(--bg2); filter: none;
+  }
+  .perso-detail-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(6,6,8,0.3) 0%, rgba(6,6,8,0.5) 50%, rgba(6,6,8,0.95) 100%);
+  }
+  .perso-detail-hero-topbar {
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), rgba(184,151,90,0.2), transparent);
+  }
+  .perso-detail-hero-content {
+    position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);
+    width: 88%; max-width: 1000px;
+  }
+  .perso-detail-back {
+    position: absolute; top: 5.5rem; left: 50%; transform: translateX(-50%);
+    width: 88%; max-width: 1000px;
+  }
+  .back-link-perso {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6); backdrop-filter: blur(8px);
+    background: rgba(6,6,8,0.35); padding: 0.5rem 1rem;
+    border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r);
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .back-link-perso:hover { color: var(--gold); border-color: var(--gold-border); }
+  .back-link-perso svg { width: 14px; }
+  .perso-detail-cat {
+    font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
+    font-weight: 700; padding: 0.28rem 0.75rem; border-radius: 3px;
+    display: inline-block; margin-bottom: 1rem;
+  }
+  .perso-detail-title {
+    font-family: var(--font-h); font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 600; line-height: 1; color: var(--text); margin-bottom: 0.5rem;
+  }
+  .perso-detail-title em { font-style: italic; color: var(--gold); }
+  .perso-detail-body { width: 88%; max-width: 1000px; margin: 0 auto; padding: 4rem 0 8rem; }
+  .perso-detail-layout { display: grid; grid-template-columns: 1fr 320px; gap: 5rem; align-items: start; }
+  .pd-section { margin-bottom: 0; }
+  .pd-section-label {
+    display: flex; align-items: center; gap: 0.55rem;
+    font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 1rem;
+  }
+  .pd-section-icon { font-size: 0.75rem; color: var(--gold); opacity: 0.8; }
+  .pd-section-icon.appris { color: #7ab0f0; }
+  .pd-text { font-size: 0.92rem; color: var(--text2); line-height: 1.85; }
+  .pd-separator { height: 1px; background: linear-gradient(90deg, rgba(184,151,90,0.25), transparent); margin: 2rem 0; }
+  .pd-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; padding: 0; margin: 0; }
+  .pd-list li { font-size: 0.9rem; color: var(--text2); line-height: 1.7; padding-left: 1.4rem; position: relative; }
+  .pd-list-appris li::before { content: '◉'; position: absolute; left: 0; color: #7ab0f0; font-size: 0.55rem; top: 0.35rem; }
+  .pd-galerie { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; }
+  .pd-galerie-item {
+    position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 6px;
+    border: 1px solid rgba(184,151,90,0.12); background: var(--bg4);
+    cursor: pointer; padding: 0; display: block; transition: border-color 0.25s;
+  }
+  .pd-galerie-item:hover { border-color: rgba(184,151,90,0.4); }
+  .pd-galerie-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s, filter 0.3s; filter: brightness(0.92); }
+  .pd-galerie-item:hover img { transform: scale(1.04); filter: brightness(1); }
+  .perso-detail-sidebar { position: sticky; top: 8rem; }
+  .perso-detail-meta-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r2); overflow: hidden; }
+  .perso-detail-meta-card-top { height: 3px; background: linear-gradient(90deg, var(--gold), transparent); }
+  .perso-detail-meta-section { padding: 1.5rem; border-bottom: 1px solid var(--border); }
+  .perso-detail-meta-section:last-child { border-bottom: none; }
+  .perso-detail-meta-label { font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem; display: block; }
+  .perso-detail-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .perso-detail-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); background: rgba(184,151,90,0.08); border: 1px solid rgba(184,151,90,0.18); padding: 0.3rem 0.75rem; border-radius: 3px; }
+  .pd-nav-proj { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .pd-nav-btn { display: flex; align-items: center; gap: 0.6rem; padding: 0.75rem 1rem; border-radius: 6px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); color: var(--text2); font-size: 0.78rem; text-decoration: none; transition: all 0.25s; line-height: 1.3; }
+  .pd-nav-btn span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+  .pd-nav-btn:hover { border-color: rgba(184,151,90,0.3); color: var(--gold); background: rgba(184,151,90,0.05); }
+  .pd-nav-next { justify-content: flex-end; text-align: right; }
+
+  @media (max-width: 1024px) {
+    .perso-grid { grid-template-columns: repeat(2,1fr); }
+    .perso-detail-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .perso-detail-sidebar { position: static; }
+  }
+  @media (max-width: 600px) {
+    .perso-grid { grid-template-columns: 1fr; }
+    .perso-detail-hero { height: 40vh; min-height: 280px; }
+  }
+  </style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<header>
+  <nav id="navbar">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#hero">Présentation</a></li>
+      <li class="nav-dropdown">
+        <a href="projets.html">Domaines <span class="nav-arrow">▾</span></a>
+        <ul class="nav-sub">
+          <li><a href="projets.html?cat=strat">Stratégie de communication</a></li>
+          <li><a href="projets.html?cat=crea">Création numérique</a></li>
+          <li><a href="projets.html?cat=dev">Développement numérique</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#projets-slider">Projets</a></li>
+      <li><a href="influence.html" class="active">Perso</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="index.html" class="nav-logo">MR<span class="dot">.</span></a>
+  </nav>
+</header>
+
+
+
+<!-- ══ LISTE INFLUENCES ══ -->
+<section class="perso-page-hero">
+  <div class="perso-page-hero-inner">
+    <div class="perso-breadcrumb">
+      <a href="index.html">Accueil</a><span>›</span>Influences
+    </div>
+    <h1 class="perso-page-title">Mes <em>influences</em></h1>
+  </div>
+</section>
+
+<div class="perso-filters">
+  <button class="filter-btn active" data-filter="all">
+    Tous <span class="filter-count">5</span>
+  </button>
+  <button class="filter-btn " data-filter="jv">
+    Jeux-vidéo <span class="filter-count">3</span>
+  </button>
+  <button class="filter-btn " data-filter="film">
+    Film <span class="filter-count">1</span>
+  </button>
+  <button class="filter-btn " data-filter="yt">
+    Youtuber <span class="filter-count">1</span>
+  </button>
+  <button class="filter-btn " data-filter="autre">
+    Autre <span class="filter-count">0</span>
+  </button>
+  <!-- Pour ajouter un filtre : copier un bouton ci-dessus et changer le data-filter -->
+</div>
+
+<section class="perso-section">
+  <div class="perso-grid-wrap">
+    <div class="perso-grid" id="persoGrid">
+      
+      <a class="perso-card rv"
+         href="influence-1.html"
+         data-cat="jv">
+        <div class="perso-card-top-bar"></div>
+        <div class="perso-card-img-wrap">
+          
+          <img src="./images/persona5.webp"
+               alt="Influence jeux-vidéo : Persona 5"
+               class="perso-card-img "
+               onerror="this.style.display='none'">
+          
+          <div class="perso-card-overlay"><span>Voir →</span></div>
+        </div>
+        <div class="perso-card-body">
+          <span class="perso-cat-badge perso-jv">Jeux-vidéo</span>
+          <div class="perso-card-title">Influence jeux-vidéo : Persona 5</div>
+          <div class="perso-card-desc">Exploration créative personnelle autour de l&#39;univers de Persona 5.</div>
+          <div class="perso-card-tags">
+            
+            
+            
+            
+            
+            
+            
+          </div>
+          <div class="perso-card-cta">
+            Voir l'influence
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+      
+      <a class="perso-card rv"
+         href="influence-2.html"
+         data-cat="jv">
+        <div class="perso-card-top-bar"></div>
+        <div class="perso-card-img-wrap">
+          
+          <img src="./images/minecraft.webp"
+               alt="Influence jeux-vidéo : Minecraft"
+               class="perso-card-img "
+               onerror="this.style.display='none'">
+          
+          <div class="perso-card-overlay"><span>Voir →</span></div>
+        </div>
+        <div class="perso-card-body">
+          <span class="perso-cat-badge perso-jv">Jeux-vidéo</span>
+          <div class="perso-card-title">Influence jeux-vidéo : Minecraft</div>
+          <div class="perso-card-desc">Développement expérimental en PHP et exploration de nouveaux patterns.</div>
+          <div class="perso-card-tags">
+            
+            
+            
+            
+            
+            
+            
+          </div>
+          <div class="perso-card-cta">
+            Voir l'influence
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+      
+      <a class="perso-card rv"
+         href="influence-3.html"
+         data-cat="film">
+        <div class="perso-card-top-bar"></div>
+        <div class="perso-card-img-wrap">
+          
+          <img src="./images/star-wars.webp"
+               alt="Influence film : Star Wars"
+               class="perso-card-img "
+               onerror="this.style.display='none'">
+          
+          <div class="perso-card-overlay"><span>Voir →</span></div>
+        </div>
+        <div class="perso-card-body">
+          <span class="perso-cat-badge perso-film">Film</span>
+          <div class="perso-card-title">Influence film : Star Wars</div>
+          <div class="perso-card-desc">Création visuelle libre autour du motion design et des animations SVG.</div>
+          <div class="perso-card-tags">
+            
+            
+            
+            
+            
+            
+            
+          </div>
+          <div class="perso-card-cta">
+            Voir l'influence
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+      
+      <a class="perso-card rv"
+         href="influence-4.html"
+         data-cat="yt">
+        <div class="perso-card-top-bar"></div>
+        <div class="perso-card-img-wrap">
+          
+          <img src="./images/jdg.webp"
+               alt="Influence Youtuber : Bazar du grenier"
+               class="perso-card-img "
+               onerror="this.style.display='none'">
+          
+          <div class="perso-card-overlay"><span>Voir →</span></div>
+        </div>
+        <div class="perso-card-body">
+          <span class="perso-cat-badge perso-yt">Youtuber</span>
+          <div class="perso-card-title">Influence Youtuber : Bazar du grenier</div>
+          <div class="perso-card-desc">Prototype interactif avec animations JavaScript et micro-interactions.</div>
+          <div class="perso-card-tags">
+            
+            
+            
+            
+            
+            
+            
+          </div>
+          <div class="perso-card-cta">
+            Voir l'influence
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+      
+      <a class="perso-card rv"
+         href="influence-5.html"
+         data-cat="jv">
+        <div class="perso-card-top-bar"></div>
+        <div class="perso-card-img-wrap">
+          
+          <img src="./images/ddlc.webp"
+               alt="Influence jeux-vidéo : Doki Doki Literature Club"
+               class="perso-card-img "
+               onerror="this.style.display='none'">
+          
+          <div class="perso-card-overlay"><span>Voir →</span></div>
+        </div>
+        <div class="perso-card-body">
+          <span class="perso-cat-badge perso-jv">Jeux-vidéo</span>
+          <div class="perso-card-title">Influence jeux-vidéo : Doki Doki Literature Club</div>
+          <div class="perso-card-desc">Identité visuelle complète pensée sous Figma avec charte graphique.</div>
+          <div class="perso-card-tags">
+            
+            
+            
+            
+            
+            
+            
+          </div>
+          <div class="perso-card-cta">
+            Voir l'influence
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  const filterBtns = document.querySelectorAll('.perso-filters .filter-btn');
+  const cards      = Array.from(document.querySelectorAll('.perso-card'));
+  const initFilter = (function(){var c=new URLSearchParams(location.search).get('cat');return document.querySelector('.filter-btn[data-filter="'+c+'"]')?c:'all';})();
+
+  function filterPerso(cat) {
+    filterBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === cat));
+    let idx = 0;
+    cards.forEach(card => {
+      const match = cat === 'all' || card.dataset.cat === cat;
+      if (match) {
+        card.style.display = '';
+        setTimeout(() => { card.style.opacity='1'; card.style.transform=''; card.style.pointerEvents='auto'; }, idx * 55);
+        idx++;
+      } else {
+        card.style.opacity='0'; card.style.transform='scale(0.94) translateY(10px)'; card.style.pointerEvents='none';
+        setTimeout(() => { card.style.display='none'; }, 350);
+      }
+    });
+    const url = new URL(window.location);
+    if (cat === 'all') url.searchParams.delete('cat');
+    else url.searchParams.set('cat', cat);
+    history.replaceState(null, '', url);
+  }
+
+  filterBtns.forEach(btn => btn.addEventListener('click', () => filterPerso(btn.dataset.filter)));
+  filterPerso(initFilter);
+})();
+</script>
+
+
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo">MR<span class="dot">.</span></span>
+    <span class="footer-copy">© 2025 — Portfolio Mael Rabah</span>
+    <span class="footer-tag">BUT MMI</span>
+  </div>
+</footer>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

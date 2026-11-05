@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets — Mael Rabah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* ── Fix hero image : toujours en absolute pour ne pas pousser le contenu ── */
+        .projet-detail-hero {
+            position: relative !important;
+            height: 55vh !important;
+            min-height: 380px !important;
+            overflow: hidden !important;
+            background: var(--bg2);
+        }
+        .projet-detail-hero-img {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+            filter: grayscale(15%) brightness(0.6);
+            transform: scale(1.03);
+            display: block;
+        }
+        .projet-detail-hero-img.contain-img {
+            object-fit: contain !important;
+            padding: 4rem;
+            background: var(--bg2);
+            filter: brightness(0.85) !important;
+            transform: none !important;
+        }
+        .projet-detail-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(6,6,8,0.3) 0%, rgba(6,6,8,0.5) 50%, rgba(6,6,8,0.95) 100%);
+            z-index: 1;
+        }
+        .projet-detail-hero-topbar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), rgba(184,151,90,0.2), transparent);
+            z-index: 3;
+        }
+        .projet-detail-back {
+            position: absolute;
+            top: 5.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 88%;
+            max-width: 1000px;
+            z-index: 3;
+        }
+        .projet-detail-hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 88%;
+            max-width: 1000px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+ 
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+ 
+<header>
+    <nav id="navbar">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#hero">Présentation</a></li>
+            <li class="nav-dropdown">
+                <a href="projets.html">Domaines <span class="nav-arrow">▾</span></a>
+                <ul class="nav-sub">
+                    <li><a href="projets.html?cat=strat">Stratégie de communication</a></li>
+                    <li><a href="projets.html?cat=crea">Création numérique</a></li>
+                    <li><a href="projets.html?cat=dev">Développement numérique</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html#projets-slider">Projets</a></li>
+            <li><a href="projet-perso.html">Perso</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="nav-logo">MR<span class="dot">.</span></a>
+    </nav>
+</header>
+ 
+
+ 
+<!-- ══ LISTE PROJETS ══ -->
+<section class="page-hero">
+    <div class="hero-grid-bg"></div>
+    <div class="page-hero-inner">
+        <div class="page-breadcrumb"><a href="index.html">Accueil</a><span>›</span>Projets</div>
+        <h1 class="page-title">Mes <em>projets</em></h1>
+    </div>
+</section>
+ 
+<div class="projets-filters">
+    <button class="filter-btn active" data-filter="all">Tous <span class="filter-count">7</span></button>
+    <button class="filter-btn " data-filter="strat">Stratégie <span class="filter-count">2</span></button>
+    <button class="filter-btn " data-filter="crea">Création numérique <span class="filter-count">4</span></button>
+    <button class="filter-btn " data-filter="dev">Développement <span class="filter-count">1</span></button>
+</div>
+ 
+<section class="projets-section">
+    <div class="projets-grid-wrap">
+        <div class="projets-grid" id="projetsGrid">
+            
+            <a class="projet-card rv"
+               href="projet-1.html"
+               data-cat="strat">
+                <div class="projet-card-top-bar"></div>
+                <div class="projet-img-wrap">
+                    <img src="./width_263.png"
+                         alt="Fruivia "
+                         class="projet-img projet-img-contain"
+                         onerror="this.style.display='none'">
+                </div>
+                <div class="projet-card-body">
+                    <span class="projet-cat-badge dom-strat">Stratégie</span>
+                    <div class="projet-card-title">Fruivia </div>
+                    <div class="projet-card-desc">2025-2026 : Création d&#39;un projet et analyse communicationnelle de celui-ci</div>
+                    <div class="projet-comps">
+                        
+                        <span class="comp-badge">Exprimer</span>
+                        
+                        <span class="comp-badge">Concevoir</span>
+                        
+                        
+                        
+                    </div>
+                    <div class="projet-card-cta">
+                        Voir le projet
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </a>
+            
+            <a class="projet-card rv"
+               href="projet-2.html"
+               data-cat="crea">
+                <div class="projet-card-top-bar"></div>
+                <div class="projet-img-wrap">
+                    <img src="./image-projet/logo-V_xtrem.svg"
+                         alt="V-Xtrem"
+                         class="projet-img projet-img-contain"
+                         onerror="this.style.display='none'">
+                </div>
+                <div class="projet-card-body">
+                    <span class="projet-cat-badge dom-crea">Création numérique</span>
+                    <div class="projet-card-title">V-Xtrem</div>
+                    <div class="projet-card-desc">2024-2025 : Création de design d&#39;une canette</div>
+                    <div class="projet-comps">
+                        
+                        <span class="comp-badge">Concevoir</span>
+                        
+                        <span class="comp-badge">Entreprendre</span>
+                        
+                        
+                        
+                    </div>
+                    <div class="projet-card-cta">
+                        Voir le projet
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </a>
+            
+            <a class="projet-card rv"
+               href="projet-3.html"
+               data-cat="dev">
+                <div class="projet-card-top-bar"></div>
+                <div class="projet-img-wrap">
+                    <img src="./image-projet/allumettes.webp"
+                         alt="Code Java : Le Jeu des Allumettes"
+                         class="projet-img "
+                         onerror="this.style.display='none'">
+                </div>
+                <div class="projet-card-body">
+                    <span class="projet-cat-badge dom-dev">Développement</span>
+                    <div class="projet-card-title">Code Java : Le Jeu des Allumettes</div>
+                    <div class="projet-card-desc">2024-2025 : Création d&#39;un jeu des allumettes grâce au codage en Java</div>
+                    <div class="projet-comps">
+                        
+                        <span class="comp-badge">Exprimer</span>
+                        
+                        <span class="comp-badge">Développer</span>
+                        
+                        
+                        
+                    </div>
+                    <div class="projet-card-cta">
+                        Voir le projet
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </a>
+            
+            <a class="projet-card rv"
+               href="projet-4.html"
+               data-cat="strat">
+                <div class="projet-card-top-bar"></div>
+                <div class="projet-img-wrap">
+                    <img src="./image-projet/logo-smartprotect.webp"
+                         alt="SmartProtect"
+                         class="projet-img "
+                         onerror="this.style.display='none'">
+                </div>
+                <div class="projet-card-body">
+                    <span class="projet-cat-badge dom-strat">Stratégie</span>
+                    <div class="projet-card-title">SmartProtect</div>
+                    <div class="projet-card-desc">2024-2025 : Création d&#39;une marque en rapport à une cause écologique</div>
+                    <div class="projet-comps">
+                        
+                        <span class="comp-badge">Comprendre</span>
+                        
+                        <span class="comp-badge">Concevoir</span>
+                        
+                        
+                        
+                    </div>
+                    <div class="projet-card-cta">
+                        Voir le projet
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </a>
+            
+            <a class="projet-card rv"
+               href="projet-5.html"
+               data-cat="crea">
+                <div class="projet-card-top-bar"></div>
+                <div class="projet-img-wrap">
+                    <img src="./image-projet/logo-trails.svg"
+                         alt="Trails de la Croix"
+                         class="projet-img projet-img-contain"
+                         onerror="this.style.display='none'">
+                </div>
+                <div class="projet-card-body">
+                    <span class="projet-cat-badge dom-crea">Création numérique</span>
+                    <div class="projet-card-title">Trails de la Croix</div>
+                    <div class="projet-card-desc">2025-2026 : Création d&#39;une affiche afin de promouvoir un évènement </div>
+                    <div class="projet-comps">
+                        
+                        <span class="comp-badge">Concevoir</span>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="projet-card-cta">
+                        Voir le projet
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </a>
+            
+            <a class="projet-card rv"
+               href="projet-6.html"
+               data-cat="crea">
+                <div class="projet-card-top-bar"></div>
+                <div class="projet-img-wrap">
+                    <img src="./Affiche--biologie-Exposciences.png"
+                         alt="Affiches Exposciences"
+                         class="projet-img "
+                         onerror="this.style.display='none'">
+                </div>
+                <div class="projet-card-body">
+                    <span class="projet-cat-badge dom-crea">Création numérique</span>
+                    <div class="projet-card-title">Affiches Exposciences</div>
+                    <div class="projet-card-desc">2025-2026 : Réalisation de 2 affiche sur le thème de la chimie et biologie pour le commanditaire Exposciences</div>
+                    <div class="projet-comps">
+                        
+                        <span class="comp-badge">Concevoir</span>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="projet-card-cta">
+                        Voir le projet
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </a>
+            
+            <a class="projet-card rv"
+               href="projet-7.html"
+               data-cat="crea">
+                <div class="projet-card-top-bar"></div>
+                <div class="projet-img-wrap">
+                    <img src="./affiche.png"
+                         alt="Affiche ça m&#39;intéresse : Persona 3"
+                         class="projet-img "
+                         onerror="this.style.display='none'">
+                </div>
+                <div class="projet-card-body">
+                    <span class="projet-cat-badge dom-crea">Création numérique</span>
+                    <div class="projet-card-title">Affiche ça m&#39;intéresse : Persona 3</div>
+                    <div class="projet-card-desc">2025-2026 : Production d&#39;une affiche et de 4 page inspiré du magazine ça m&#39;intéresse </div>
+                    <div class="projet-comps">
+                        
+                        <span class="comp-badge">Concevoir</span>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="projet-card-cta">
+                        Voir le projet
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+    </div>
+</section>
+ 
+<script>
+(function () {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = Array.from(document.querySelectorAll('.projet-card'));
+    function filterProjets(cat) {
+        filterBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === cat));
+        let idx = 0;
+        cards.forEach(card => {
+            const match = cat === 'all' || card.dataset.cat === cat;
+            if (match) {
+                card.style.display = '';
+                setTimeout(() => { card.style.opacity='1'; card.style.transform=''; card.style.pointerEvents='auto'; }, idx*55);
+                idx++;
+            } else {
+                card.style.opacity='0'; card.style.transform='scale(0.94) translateY(10px)'; card.style.pointerEvents='none';
+                setTimeout(() => { card.style.display='none'; }, 350);
+            }
+        });
+        const url = new URL(window.location);
+        if (cat==='all') url.searchParams.delete('cat');
+        else url.searchParams.set('cat', cat);
+        history.replaceState(null,'',url);
+    }
+    filterBtns.forEach(btn => btn.addEventListener('click', () => filterProjets(btn.dataset.filter)));
+    filterProjets((function(){var c=new URLSearchParams(location.search).get('cat');return document.querySelector('.filter-btn[data-filter="'+c+'"]')?c:'all';})());
+})();
+</script>
+ 
+
+ 
+<footer class="footer">
+    <div class="footer-inner">
+        <span class="footer-logo">MR<span class="dot">.</span></span>
+        <span class="footer-copy">© 2025 — Portfolio Mael Rabah</span>
+        <span class="footer-tag">BUT MMI</span>
+    </div>
+</footer>
+ 
+<script src="./script.js"></script>
+ 
+</body>
+</html>

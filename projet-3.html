@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Java : Le Jeu des Allumettes — Projets — Mael Rabah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* ── Fix hero image : toujours en absolute pour ne pas pousser le contenu ── */
+        .projet-detail-hero {
+            position: relative !important;
+            height: 55vh !important;
+            min-height: 380px !important;
+            overflow: hidden !important;
+            background: var(--bg2);
+        }
+        .projet-detail-hero-img {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+            filter: grayscale(15%) brightness(0.6);
+            transform: scale(1.03);
+            display: block;
+        }
+        .projet-detail-hero-img.contain-img {
+            object-fit: contain !important;
+            padding: 4rem;
+            background: var(--bg2);
+            filter: brightness(0.85) !important;
+            transform: none !important;
+        }
+        .projet-detail-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(6,6,8,0.3) 0%, rgba(6,6,8,0.5) 50%, rgba(6,6,8,0.95) 100%);
+            z-index: 1;
+        }
+        .projet-detail-hero-topbar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), rgba(184,151,90,0.2), transparent);
+            z-index: 3;
+        }
+        .projet-detail-back {
+            position: absolute;
+            top: 5.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 88%;
+            max-width: 1000px;
+            z-index: 3;
+        }
+        .projet-detail-hero-content {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 88%;
+            max-width: 1000px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+ 
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+ 
+<header>
+    <nav id="navbar">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#hero">Présentation</a></li>
+            <li class="nav-dropdown">
+                <a href="projets.html">Domaines <span class="nav-arrow">▾</span></a>
+                <ul class="nav-sub">
+                    <li><a href="projets.html?cat=strat">Stratégie de communication</a></li>
+                    <li><a href="projets.html?cat=crea">Création numérique</a></li>
+                    <li><a href="projets.html?cat=dev">Développement numérique</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html#projets-slider">Projets</a></li>
+            <li><a href="projet-perso.html">Perso</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="nav-logo">MR<span class="dot">.</span></a>
+    </nav>
+</header>
+ 
+
+ 
+<!-- ══ VUE DÉTAIL ══ -->
+<main class="projet-detail">
+ 
+    <div class="projet-detail-hero">
+        <div class="projet-detail-hero-topbar"></div>
+        
+        <img src="./image-projet/allumettes.webp"
+             alt="Code Java : Le Jeu des Allumettes"
+             class="projet-detail-hero-img">
+        
+        <div class="projet-detail-hero-overlay"></div>
+        <div class="projet-detail-back">
+            <a href="projets.html" class="back-link-detail">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Retour aux projets
+            </a>
+        </div>
+        <div class="projet-detail-hero-content">
+            <span class="projet-detail-cat dom-dev">Développement</span>
+            <h1 class="projet-detail-title">
+                Code Java : Le Jeu des <em>Allumettes</em>
+            </h1>
+            
+            <div class="projet-detail-sae">R1.12</div>
+            
+        </div>
+    </div>
+ 
+    <div class="projet-detail-body">
+        <div class="projet-detail-layout">
+ 
+            <div class="projet-detail-main">
+ 
+                
+                <div class="pd-section">
+                    <div class="pd-section-label"><span class="pd-section-icon">◈</span>Présentation du projet</div>
+                    <p class="pd-text">Dans ce travail le but était de créer le jeu des allumettes en Java. Je me suis donc occupé de la programmation de celui-ci.<br />
+    J&#39;ai tout d&#39;abord commencé par coder les différentes classes. Dans cet exercice on devait donc créer 4 classes spécifiques, la première<br />
+    pour définir les joueurs, une suivante pour définir le nombre d&#39;allumettes et comment se passe le retrait des allumettes, <br />
+    ensuite on devait créer une classe partie servant à définir comment se déroulerait celle-ci et donc créer une alternance de joueurs<br />
+    et ce qui allait être le déroulé.</p>
+                </div>
+                
+ 
+                
+ 
+                
+ 
+                
+                <div class="pd-separator"></div>
+                <div class="pd-section">
+                    <div class="pd-section-label"><span class="pd-section-icon">⬡</span>Galerie</div>
+                    <div class="pd-galerie" data-items="4">
+                        
+                        <button class="pd-galerie-item" onclick="openLightbox(0); return false;">
+                            <img src="./image-projet/java-code-joueur.png"
+                                 alt="Image 1"
+                                 loading="lazy">
+                            <div class="pd-galerie-overlay">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </div>
+                        </button>
+                        
+                        <button class="pd-galerie-item" onclick="openLightbox(1); return false;">
+                            <img src="./image-projet/java-partie.png"
+                                 alt="Image 2"
+                                 loading="lazy">
+                            <div class="pd-galerie-overlay">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </div>
+                        </button>
+                        
+                        <button class="pd-galerie-item" onclick="openLightbox(2); return false;">
+                            <img src="./image-projet/java-tasallumette.png"
+                                 alt="Image 3"
+                                 loading="lazy">
+                            <div class="pd-galerie-overlay">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </div>
+                        </button>
+                        
+                        <button class="pd-galerie-item" onclick="openLightbox(3); return false;">
+                            <img src="./image-projet/java-principalv1.png"
+                                 alt="Image 4"
+                                 loading="lazy">
+                            <div class="pd-galerie-overlay">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            </div>
+                        </button>
+                        
+                    </div>
+                </div>
+                
+ 
+                
+ 
+            </div>
+ 
+            <!-- SIDEBAR -->
+            <div class="projet-detail-sidebar">
+                <div class="projet-detail-meta-card">
+                    <div class="projet-detail-meta-card-top"></div>
+ 
+                    
+                    <div class="projet-detail-meta-section">
+                        <span class="projet-detail-meta-label">SAÉ</span>
+                        <div style="font-size:0.9rem;color:var(--text3);font-weight:500;">R1.12</div>
+                    </div>
+                    
+ 
+                    <div class="projet-detail-meta-section">
+                        <span class="projet-detail-meta-label">Domaine</span>
+                        <span class="projet-cat-badge dom-dev">Développement</span>
+                    </div>
+ 
+                    
+                    
+                    <div class="projet-detail-meta-section">
+                        <span class="projet-detail-meta-label">Compétences mobilisées</span>
+                        <div class="projet-detail-comps">
+                            
+                            <span class="projet-detail-comp">Exprimer</span>
+                            
+                            <span class="projet-detail-comp">Développer</span>
+                            
+                        </div>
+                    </div>
+                    
+ 
+                  
+ 
+                
+                <div class="pd-nav-proj">
+                    
+                    <a href="projet-2.html" class="pd-nav-btn pd-nav-prev">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        <span>V-Xtrem</span>
+                    </a>
+                    
+                    
+                    <a href="projet-4.html" class="pd-nav-btn pd-nav-next">
+                        <span>SmartProtect</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    
+                </div>
+                
+            </div>
+ 
+        </div>
+    </div>
+</main>
+ 
+<!-- LIGHTBOX -->
+<div id="pd-lightbox" class="pd-lightbox" role="dialog" aria-modal="true" aria-label="Agrandissement image">
+    <div class="pd-lightbox-backdrop" onclick="closeLightbox()"></div>
+    <button class="pd-lightbox-close" onclick="closeLightbox()" aria-label="Fermer">✕</button>
+    <div class="pd-lightbox-inner">
+        <img src="" alt="" id="pd-lightbox-img" class="pd-lightbox-img">
+    </div>
+    <button class="pd-lightbox-arrow pd-lb-prev" id="pdLbPrev" aria-label="Précédente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="pd-lightbox-arrow pd-lb-next" id="pdLbNext" aria-label="Suivante">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+    <div class="pd-lightbox-counter" id="pdLbCounter"></div>
+</div>
+ 
+<style>
+.pd-section { margin-bottom: 0; }
+.pd-section-label { display:flex;align-items:center;gap:0.55rem;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold,#b8975a);font-weight:600;margin-bottom:1rem; }
+.pd-section-icon { font-size:0.75rem;color:var(--gold,#b8975a);opacity:0.8; }
+.pd-icon-appris { color:#7ab0f0; }
+.pd-icon-diff   { color:#e07070; }
+.pd-text { font-size:0.92rem;color:var(--text2,#8c8880);line-height:1.85; }
+.pd-separator { height:1px;background:linear-gradient(90deg,rgba(184,151,90,0.25),transparent);margin:2rem 0; }
+.pd-list { list-style:none;display:flex;flex-direction:column;gap:0.7rem;padding:0;margin:0; }
+.pd-list li { font-size:0.9rem;color:var(--text2,#8c8880);line-height:1.7;padding-left:1.4rem;position:relative; }
+.pd-list-appris li::before { content:'◉';position:absolute;left:0;color:#7ab0f0;font-size:0.55rem;top:0.35rem; }
+.pd-list-diff li::before { content:'—';position:absolute;left:0;color:#e07070;font-size:0.75rem;top:0.1rem; }
+.pd-galerie { display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.75rem; }
+.pd-galerie[data-items="2"] { grid-template-columns:1fr 1fr; }
+.pd-galerie[data-items="1"] { grid-template-columns:1fr; }
+.pd-galerie-item { position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:6px;border:1px solid rgba(184,151,90,0.12);background:#16161c;cursor:pointer;padding:0;display:block;transition:border-color 0.25s; }
+.pd-galerie-item:hover { border-color:rgba(184,151,90,0.4); }
+.pd-galerie-item img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.3s;filter:brightness(0.92); }
+.pd-galerie-item:hover img { transform:scale(1.04);filter:brightness(1); }
+.pd-galerie-overlay { position:absolute;inset:0;background:rgba(4,4,6,0.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s;color:rgba(255,255,255,0.9); }
+.pd-galerie-item:hover .pd-galerie-overlay { opacity:1; }
+.pd-nav-proj { margin-top:1.5rem;display:flex;flex-direction:column;gap:0.5rem; }
+.pd-nav-btn { display:flex;align-items:center;gap:0.6rem;padding:0.75rem 1rem;border-radius:6px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);color:var(--text3,#5c5a55);font-size:0.78rem;text-decoration:none;transition:all 0.25s;line-height:1.3; }
+.pd-nav-btn span { overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1; }
+.pd-nav-btn:hover { border-color:rgba(184,151,90,0.3);color:var(--gold,#b8975a);background:rgba(184,151,90,0.05); }
+.pd-nav-next { justify-content:flex-end;text-align:right; }
+.pd-lightbox { position:fixed;inset:0;z-index:1100;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease; }
+.pd-lightbox.open { opacity:1;pointer-events:auto; }
+.pd-lightbox-backdrop { position:absolute;inset:0;background:rgba(4,4,6,0.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);cursor:pointer; }
+.pd-lightbox-inner { position:relative;z-index:2;max-width:90vw;max-height:85vh;display:flex;align-items:center;justify-content:center; }
+.pd-lightbox-img { max-width:100%;max-height:85vh;object-fit:contain;border-radius:4px;transition:opacity 0.2s; }
+.pd-lightbox-close { position:absolute;top:1.2rem;right:1.5rem;z-index:10;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#8c8880;font-size:0.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-family:inherit; }
+.pd-lightbox-close:hover { color:var(--gold,#b8975a);border-color:rgba(184,151,90,0.3); }
+.pd-lightbox-arrow { position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#ccc;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s; }
+.pd-lightbox-arrow:hover { background:rgba(184,151,90,0.12);border-color:rgba(184,151,90,0.3);color:var(--gold,#b8975a); }
+.pd-lb-prev { left:1.5rem; }
+.pd-lb-next { right:1.5rem; }
+.pd-lightbox-counter { position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:10;font-size:0.7rem;letter-spacing:0.2em;color:rgba(255,255,255,0.35); }
+@media(max-width:768px){.pd-galerie{grid-template-columns:repeat(2,1fr)}.pd-lb-prev{left:0.5rem}.pd-lb-next{right:0.5rem}}
+</style>
+ 
+<script>
+(function() {
+    var gallery = ["./image-projet/java-code-joueur.png", "./image-projet/java-partie.png", "./image-projet/java-tasallumette.png", "./image-projet/java-principalv1.png"];
+    var cur = 0;
+    function show(i) {
+        cur = i;
+        document.getElementById('pd-lightbox-img').setAttribute('src', gallery[cur]);
+        document.getElementById('pdLbCounter').textContent = gallery.length > 1 ? (cur+1)+' / '+gallery.length : '';
+        document.getElementById('pdLbPrev').style.display = cur > 0 ? '' : 'none';
+        document.getElementById('pdLbNext').style.display = cur < gallery.length-1 ? '' : 'none';
+    }
+    window.openLightbox = function(idx) {
+        var i = parseInt(String(idx), 10);
+        if (isNaN(i) || i < 0 || i >= gallery.length) i = 0;
+        document.getElementById('pd-lightbox').classList.add('open');
+        document.body.style.overflow = 'hidden';
+        show(i);
+    };
+    window.closeLightbox = function() {
+        document.getElementById('pd-lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+    };
+    function navigate(dir) {
+        var next = Math.max(0, Math.min(gallery.length-1, cur+dir));
+        var lbImg = document.getElementById('pd-lightbox-img');
+        lbImg.style.opacity = '0';
+        setTimeout(function() { lbImg.style.opacity='1'; show(next); }, 150);
+    }
+    document.getElementById('pdLbPrev').addEventListener('click', function() { navigate(-1); });
+    document.getElementById('pdLbNext').addEventListener('click', function() { navigate(1); });
+    document.addEventListener('keydown', function(e) {
+        if (!document.getElementById('pd-lightbox').classList.contains('open')) return;
+        if (e.key==='Escape') closeLightbox();
+        if (e.key==='ArrowLeft') navigate(-1);
+        if (e.key==='ArrowRight') navigate(1);
+    });
+})();
+</script>
+ 
+
+ 
+<footer class="footer">
+    <div class="footer-inner">
+        <span class="footer-logo">MR<span class="dot">.</span></span>
+        <span class="footer-copy">© 2025 — Portfolio Mael Rabah</span>
+        <span class="footer-tag">BUT MMI</span>
+    </div>
+</footer>
+ 
+<script src="./script.js"></script>
+ 
+</body>
+</html>
